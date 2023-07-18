@@ -6,7 +6,7 @@
 
 
 <p align="center">
-  <img src="image_url.jpg" alt="Taliup HQ">
+  <img src="https://github.com/Taliup/taliuphq-kb/blob/main/taliuphq.png" alt="Taliup HQ">
 </p>
 
 # <h1 align="center">Taliup HQ Knowledge base</h1>
