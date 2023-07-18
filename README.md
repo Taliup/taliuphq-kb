@@ -1,20 +1,7 @@
 # <center>Taliup HQ Knowledge Base</center>
 ## A Knowledge Base for Taliup HQ
 ![alt TaliupHQ](https://github.com/Taliup/taliuphq-kb/blob/main/taliuphq.png)
-
-
-
-
-
-
-
-
-
-========================================================
-
-View Source  window.WRM=window.WRM||{};window.WRM.\_unparsedData=window.WRM.\_unparsedData||{};window.WRM.\_unparsedErrors=window.WRM.\_unparsedErrors||{}; WRM.\_unparsedData\["com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path.context-path"\]="\\"/wiki\\""; WRM.\_unparsedData\["com.atlassian.plugins.atlassian-plugins-webresource-rest:curl.cross-origin-resources"\]="false"; if(window.WRM.\_dataArrived)window.WRM.\_dataArrived();      
-
-![](https://taliup.atlassian.net/wiki/plugins/servlet/confluence/placeholder/macro?definition=e3RvY30&locale=en_US&version=2)
+   
 
 Setting Up Tips
 ===============
