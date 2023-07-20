@@ -5,8 +5,8 @@
       <div class="site-header">
         <a href="" class="site-title text-decoration-none">
           <!-- <h4 class="mb-0">Taliup HQ KB</h4> -->
-          <!-- <img src="../assets/logo.png" style="height: 60px" alt=""> -->
-          <span>
+          <img src="../assets/logo.png" style="height: 55px" alt="">
+          <span class="mx-2 text-dark" style="font-weight: 500">
             Knowledge Base
           </span>
         </a>
@@ -308,7 +308,7 @@ export default {
   }
 
   .site-nav, .site-header, .site-footer {
-    width: 18.5rem !important;
+    width: 19.5rem !important;
   }
 
   .main {
@@ -374,6 +374,10 @@ export default {
     width: 50rem;
     max-height: calc(100vh - 200%) !important;
   }
+}
+
+.site-header img{
+  height: 40px !important;
 }
 
 .site-footer {
