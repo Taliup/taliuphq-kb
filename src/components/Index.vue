@@ -40,7 +40,28 @@
             <a href="#timesheets" class="nav-list-link">Timesheets</a>
           </li>
           <li class="nav-list-item text-left">
-            <a href="#" class="nav-list-link">Catalogs, Categories and Products</a>
+            <div class="d-flex flex-row justify-content-between align-items-center">
+              <a href="#catalogs" class="nav-list-link">
+                Catalogs
+              </a>
+              <i class="text-accent mx-3"
+                :class="visibleCatalogs ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"
+               v-b-toggle.catalog-collapse></i>
+            </div>
+
+            <b-collapse id="catalog-collapse" v-model="visibleCatalogs" class="bg-white border-radius">
+              <ul style="list-style-type: none">
+                <li class="nav-list-item text-left">
+                  <a href="#products" class="nav-list-link">Products</a>
+                </li>
+                <li class="nav-list-item text-left">
+                  <a href="#categories" class="nav-list-link">Categories</a>
+                </li>
+                <li class="nav-list-item text-left">
+                  <a href="#inventory" class="nav-list-link">Inventory</a>
+                </li>
+              </ul>
+            </b-collapse>
           </li>
         </ul>
       </nav>
@@ -102,6 +123,10 @@
       <section id="timesheets" class="p-3">
         <timesheets ref="timesheetsComponent"/>
       </section>
+
+      <section id="catalogs" class="p-3">
+        <catalogs ref="catalogsComponent"/>
+      </section>
     </div>
   </div>
 </template>
@@ -116,6 +141,7 @@ export default {
     return {
       searchTerm: '',
       searchResults: [],
+      visibleCatalogs: false,
     }
   },
   mounted() {
