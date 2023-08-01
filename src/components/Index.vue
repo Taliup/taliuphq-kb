@@ -373,8 +373,8 @@ export default {
   }
 
   .site-title {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
+    padding-top: 1.2rem !important;
+    padding-bottom: 1.2rem !important;
     padding-right: 2rem !important;
     padding-left: 2rem !important;
   }
