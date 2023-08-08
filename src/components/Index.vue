@@ -98,6 +98,7 @@ export default {
 </script>
 
 <style scoped>
+
 .guide-dashboard {
   display: flex;
   min-height: 100vh;
@@ -105,6 +106,9 @@ export default {
 }
 
 .guide {
+  position: fixed;
+  height: 100%;
+  min-width: 250px;
   flex: 0 0 16rem;
   padding: 2rem;
   background-color: #1f1f1f;
@@ -151,7 +155,7 @@ export default {
 }
 
 .dashboard {
-  flex: 1;
+  margin-left: 250px;
   padding: 2rem;
 }
 
