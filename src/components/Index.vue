@@ -1,6 +1,8 @@
 <template>
   <div class="guide-dashboard">
-    <aside class="guide">
+    <button class="menu-toggle" @click="toggleMenu">&#9776;</button>
+
+    <aside class="guide" :class="{ 'open': isMenuOpen }">
       <div class="logo-container">
         <img src="../assets/logo.png" alt="Logo" class="logo-image">
         <span class="guide-title">Knowledge Base</span>
@@ -8,7 +10,14 @@
       <nav class="guide-nav">
         <ul class="nav-list">
           <li v-for="section in sections" :key="section.id">
-            <a :href="'#' + section.id" class="nav-list-link" @click="activateSection(section)">{{ section.name }}</a>
+            <a :href="'#' + section.id" :class="['nav-list-link', { 'button': section.isButton }]" @click="activateSection(section)">
+              {{ section.name }}
+            </a>
+            <ul v-if="section.subSections" class="sub-nav-list">
+              <li v-for="subSection in section.subSections" :key="subSection.id">
+                <a :href="'#' + subSection.id" class="nav-list-link" @click="activateSection(subSection)">{{ subSection.name }}</a>
+              </li>
+            </ul>
           </li>
         </ul>
       </nav>
@@ -21,6 +30,7 @@
     </main>
   </div>
 </template>
+
 
 <script>
 export default {
@@ -70,6 +80,7 @@ export default {
           component: 'timesheets',
           isActive: false,
         },
+        
         {
         id: 'catalogs',
         name: 'Catalogs',
@@ -82,6 +93,14 @@ export default {
         isActive: false,
         // Add more sections here
         },
+        {
+          id: 'feature-release',
+          name: 'Feature Release',
+          component: 'feature-release',
+          isActive: false,
+          isButton: true, // This indicates it's a buttonAdd this property to indicate it's a button
+        },
+        
       ],
       isMenuOpen: false,
     };
@@ -171,6 +190,27 @@ export default {
 .dashboard {
   text-align: left;
 }
+/* ... Your existing styles ... */
+
+.button {
+  display: block;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin: 0.25rem 0;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+
 
 /* Customize styles for other components as needed */
 </style>

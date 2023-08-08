@@ -1,26 +1,30 @@
 <template>
-    <div class="text-left" ref="featureReleaseContent">
+  <div class="text-left" ref="featureReleaseContent">
+    <div class="feature-release-page">
       <div class="container">
         <div class="release-header">
           <h1 class="release-title">Discover What's New</h1>
           <p class="release-date">Released on August 3rd, 2023</p>
         </div>
-        <div class="release-content">
-          <div v-for="(feature, index) in features" :key="index" class="feature">
-            <h2 class="feature-title">{{ feature.title }}</h2>
-            <p class="feature-description">{{ feature.description }}</p>
-          </div>
-        </div>
-        <div class="release-footer">
-          <p class="release-conclusion">
-            Stay ahead with these exciting updates. Log in to Taliup Register now and explore the new features!
-          </p>
-          <p class="release-support">For assistance, our support team is just a message away.</p>
-          <p class="release-signature">Best regards,<br />The Taliup Team</p>
+      <div class="release-content">
+        <div v-for="(feature, index) in features" :key="index" class="feature">
+          <h2 class="feature-title">{{ feature.title }}</h2>
+          <p class="feature-description">{{ feature.description }}</p>
         </div>
       </div>
+      <div class="release-footer">
+        <p class="release-conclusion">
+          Stay ahead with these exciting updates. Log in to Taliup Register now and explore the new features!
+        </p>
+        <p class="release-support">For assistance, our support team is just a message away.</p>
+        <p class="release-signature">Best regards,<br />The Taliup Team</p>
+      </div>
     </div>
-  </template>
+  </div>
+  </div>
+</template>
+    
+      
   
   <script>
   export default {
@@ -61,25 +65,25 @@
   <style scoped>
   /* Your unique CSS styles can go here */
   .feature-release-page {
-    background-color: #f9fafc;
+    background-color: #ffff;
     min-height: 100vh;
     padding: 40px 0;
   }
   
   .container {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 10px;
   }
   
   .release-header {
-    text-align: center;
     margin-bottom: 30px;
   }
   
   .release-title {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: bold;
+    color: #333;
     margin-bottom: 10px;
   }
   
@@ -94,22 +98,27 @@
   
   .feature {
     margin-bottom: 40px;
+    padding: 20px;
+    background-color: #7051ea33;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
   
   .feature-title {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
+    color: #333;
     margin-bottom: 10px;
   }
   
   .feature-description {
-    font-size: 18px;
+    font-size: 16px;
     color: #555;
   }
   
   .release-footer {
     margin-top: 40px;
-    text-align: center;
+    color: #777;
   }
   
   .release-conclusion {
@@ -119,7 +128,6 @@
   
   .release-support {
     font-size: 16px;
-    color: #777;
     margin-bottom: 10px;
   }
   
