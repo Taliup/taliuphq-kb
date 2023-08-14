@@ -1,6 +1,12 @@
 <template>
   <div class="guide-dashboard">
-    <button class="menu-toggle" @click="toggleMenu">&#9776;</button>
+    <button
+      class="menu-toggle"
+      :class="isMenuOpen ? 'text-white' : 'text-dark'"
+      @click="toggleMenu"
+    >
+      &#9776;
+    </button>
 
     <aside class="guide" :class="{ open: isMenuOpen }">
       <div class="logo-container">
@@ -148,6 +154,7 @@ export default {
 </script>
 
 <style scoped>
+/* Main styles for larger screens */
 .guide-dashboard {
   display: flex;
   min-height: 100vh;
@@ -155,16 +162,20 @@ export default {
 }
 
 .guide {
-  overflow-y: auto; /* Add this line to make the sidebar scrollable */
-  max-height: 100vh; /* Set a maximum height for the sidebar */
+  width: 250px;
+  overflow-y: auto;
   position: fixed;
   height: 100%;
-  min-width: 250px;
-  flex: 0 0 16rem;
   padding: 2rem;
   background-color: #1f1f1f;
   color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+.guide.open {
+  transform: translateX(0);
 }
 
 .logo-container {
@@ -216,14 +227,10 @@ export default {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 2rem;
 }
-
-/* Left align all content */
 .guide,
 .dashboard {
   text-align: left;
 }
-/* ... Your existing styles ... */
-
 .button {
   display: block;
   background-color: #007aff;
@@ -242,5 +249,51 @@ export default {
   background-color: #0056b3;
 }
 
-/* Customize styles for other components as needed */
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .guide {
+    width: max-content;
+    position: fixed;
+    height: 100%;
+    padding: 1rem;
+    background-color: #1f1f1f;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+  }
+
+  .guide.open {
+    transform: translateX(0);
+  }
+  .logo-container {
+    margin-top: 3rem;
+  }
+
+  .guide-nav {
+    margin-top: 1rem;
+    text-align: left; /* Align navigation items to the left */
+    max-height: calc(100vh - 80px); /* Adjust the value as needed */
+    overflow-y: auto;
+  }
+
+  .dashboard {
+    margin-left: 0;
+    padding: 1rem;
+  }
+  .nav-scroll-container {
+    max-height: calc(100vh - 60px); /* Adjust the value as needed */
+    overflow-y: auto;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    z-index: 1000;
+  }
+}
 </style>
