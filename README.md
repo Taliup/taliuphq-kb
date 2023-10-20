@@ -20,7 +20,7 @@ Sign in to Taliup HQ as a super admin. Go to entities, find the entity you want 
 ǪuickBooks Integration
 ======================
 
-To synchronise data between Taliup HQ and Quickbooks, you will need to enter the merchant’s Quickbooks API credentials into Taliup HQ. This can be done by navigating to the Settings page and clicking on the Quickbooks tab.
+To synchronise Register Orders between Taliup HQ and Quickbooks, you will need to enter the merchant’s Quickbooks API credentials into Taliup HQ. This can be done by navigating to the Settings page and clicking on the Quickbooks tab.
 
 _Before you begin, please note that you must already have a Quickbooks Online account in order to use the Taliup HQ Quickbooks integration._
 
